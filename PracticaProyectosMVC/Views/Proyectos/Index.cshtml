@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PracticaProyectosMVC.Models.ViewModels.ProyectosViewModel>
+@{
+    ViewBag.Title = "Proyectos";
+}
+<h2>Proyectos</h2>
+@Html.ActionLink("Nuevo proyecto", "NuevoProyecto")
+<div>
+    @foreach (var item in Model)
+    {
+
+        <div id="proyectos" class="panel panel-primary">
+            <div class="panel-heading">
+                Nombre: @item.nombre
+            </div>
+                Cliente @item.cliente<br/>
+                Descripción: @item.descripcion
+        </div>
+    }
+</div>
+

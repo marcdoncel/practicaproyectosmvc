@@ -1,0 +1,27 @@
+﻿@using System.Web.Razor.Parser
+@model PracticaProyectosMVC.Models.ViewModels.ProyectosViewModel
+
+@{
+    ViewBag.Title = "NuevoProyecto";
+}
+<h2>Nuevo Proyecto</h2>
+@Html.ActionLink("Volver","Index")
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.ValidationSummary(false)
+        @Html.AntiForgeryToken()
+        <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+        <input type="text" name="nombre" id="nombre" />
+        <br />
+        <label for="cliente" class="col-sm-2 control-label">Cliente</label>
+        <input type="text" name="cliente" id="cliente" />
+        <br />
+        <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+        <textarea name="descripcion" id="descripcion"></textarea>
+        <br />
+        <button type="submit" class="btn btn-success">Enviar</button> 
+    </div>
+   
+}
+
